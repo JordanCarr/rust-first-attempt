@@ -18,10 +18,8 @@ fn fib_runner(number: usize, verbose: bool) {
         for n in 0..computed.len() {
             println!("{}: {}", n, computed[n]);
         }
-    } else if computed.last().is_some() {
-        println!("{}: {}", computed.len() - 1, computed.last().unwrap());
-    } else {
-        panic!("Error: None as last in Vector")
+    } else if let Some(last_value) = computed.last() {
+        println!("{}: {}", computed.len() - 1, last_value);
     }
 }
 
